@@ -7,9 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="spring_data_jpa01" />
+        <module name="jpa-day2" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="jpa-day2" target="8" />
       <module name="spring_data_jpa01" target="8" />
       <module name="springdata_jpa" target="8" />
     </bytecodeTargetLevel>

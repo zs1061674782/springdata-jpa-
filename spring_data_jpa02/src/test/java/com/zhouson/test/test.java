@@ -23,6 +23,14 @@ public class test {
     private UserDao userDao;
     @Test
     public void test1(){
+        List<User> users = userDao.findAll();
+        for (User user : users) {
+            System.out.println(user);
+        }
+    }
+    @Test
+    public void testFindOne(){
         User user = userDao.findOne(1003);
+        System.out.println(user);
     }
 }

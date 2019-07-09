@@ -50,39 +50,20 @@
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
         <property name="user" value="root"></property>
         <property name="password" value="123"></property>
-        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/studying" ></property>
+        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/studying?useSSL=false&amp;serverTimezone=UTC&amp;characterEncoding=utf-8&amp;autoReconnect=true" ></property>
         <property name="driverClass" value="com.mysql.cj.jdbc.Driver"></property>
     </bean>
 
     <!--3.整合spring dataJpa-->
     <jpa:repositories base-package="com.zhouson.dao" transaction-manager-ref="transactionManager"
-                      entity-manager-factory-ref="entityManagerFactoty" ></jpa:repositories>
+                   entity-manager-factory-ref="entityManagerFactoty" ></jpa:repositories>
 
     <!--4.配置事务管理器 -->
     <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
         <property name="entityManagerFactory" ref="entityManagerFactoty"></property>
     </bean>
 
-    <!-- 4.txAdvice-->
-    <tx:advice id="txAdvice" transaction-manager="transactionManager">
-        <tx:attributes>
-            <tx:method name="save*" propagation="REQUIRED"/>
-            <tx:method name="insert*" propagation="REQUIRED"/>
-            <tx:method name="update*" propagation="REQUIRED"/>
-            <tx:method name="delete*" propagation="REQUIRED"/>
-            <tx:method name="get*" read-only="true"/>
-            <tx:method name="find*" read-only="true"/>
-            <tx:method name="*" propagation="REQUIRED"/>
-        </tx:attributes>
-    </tx:advice>
-    <!-- 5.aop-->
-    <aop:config>
-        <aop:pointcut id="pointcut" expression="execution(* com.zhouson.service.*.*(..))" />
-        <aop:advisor advice-ref="txAdvice" pointcut-ref="pointcut" />
-    </aop:config>
 
-    <context:component-scan base-package="com.zhouson"></context:component-scan>
-
-    <!--组装其它 配置文件-->
-
+    <!-- 6. 配置包扫描-->
+    <context:component-scan base-package="com.zhouson" ></context:component-scan>
 </beans>

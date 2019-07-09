@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://D:/BaiduYunDownload/Study/Java/黑马57期/流行框架/62.会员版(2.0)-就业课(2.0)-Spring Data JPA/Spring Data/双元视频/day02/03-源码/jpa-day2/jpa-day2.iml" filepath="D:/BaiduYunDownload/Study/Java/黑马57期/流行框架/62.会员版(2.0)-就业课(2.0)-Spring Data JPA/Spring Data/双元视频/day02/03-源码/jpa-day2/jpa-day2.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring_data_jpa02/spring_data_jpa01.iml" filepath="$PROJECT_DIR$/spring_data_jpa02/spring_data_jpa01.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring_data_jpa01/springdata_jpa.iml" filepath="$PROJECT_DIR$/spring_data_jpa01/springdata_jpa.iml" />
     </modules>
